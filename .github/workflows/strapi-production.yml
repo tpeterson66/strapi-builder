@@ -11,19 +11,23 @@ jobs:
       - name: Checkout Current Repo
         uses: actions/checkout@v2
         with:
-          path: ./strapi
+          path: ./builder
 
       - name: Checkout Strapi Repo
         uses: actions/checkout@v2
         with:
           repository: strapi/strapi
-          path: strapi
+          path: ./strapi
 
       - name: Check Directories
         run: |
+          ls -la builder
           ls -la strapi
           pwd
-
+          ls $GITHUB_WORKSPACE
+          ls $GITHUB_WORKSPACE/builder
+          ls $GITHUB_WORKSPACE/strapi
+          
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
 
