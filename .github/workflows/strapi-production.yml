@@ -42,5 +42,5 @@ jobs:
         with:
           push: true
           file: Dockerfile
-          working-directory: strapi
+          context: strapi
           tags: tpeterson66/strapi:${{ github.run_id }}, tpeterson66/strapi:latest
