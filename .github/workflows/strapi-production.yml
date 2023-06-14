@@ -46,5 +46,5 @@ jobs:
         with:
           push: true
           # file: Dockerfile.prod
-          working-directory: strapi
+          working-directory: ${{ github.github_workspace }}/strapi
           tags: tpeterson66/strapi:${{ github.run_id }}, tpeterson66/strapi:latest
