@@ -10,11 +10,14 @@ jobs:
     steps:
       - name: Checkout Current Repo
         uses: actions/checkout@v2
+        with:
+          path: ./builder
 
       - name: Checkout Strapi Repo
         uses: actions/checkout@v2
         with:
           repository: strapi/strapi
+          path: strapi
 
       - name: Check Directories
         run: |
