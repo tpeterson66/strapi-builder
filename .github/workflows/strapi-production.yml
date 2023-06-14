@@ -8,22 +8,21 @@ jobs:
   docker:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Current Repo
-        uses: actions/checkout@v2
-        with:
-          path: ./builder
+      # - name: Checkout Current Repo
+      #   uses: actions/checkout@v2
+      #   with:
+      #     path: ./builder
 
       - name: Checkout Strapi Repo
         uses: actions/checkout@v2
         with:
           repository: strapi/strapi
-          path: ./strapi
+          # path: ./strapi
 
       - name: Check Directories
         run: |
-          cp $GITHUB_WORKSPACE/builder/Dockerfile.prod $GITHUB_WORKSPACE/strapi/Dockerfile
-          ls
-          ls -la strapi
+          wget https://raw.githubusercontent.com/tpeterson66/strapi-builder/main/Dockerfile
+          ls -la
           
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
