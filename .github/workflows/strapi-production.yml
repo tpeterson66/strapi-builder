@@ -37,10 +37,11 @@ jobs:
           password: ${{ secrets.DOCKERHUB_TOKEN }}
 
       - name: Build
-        uses: docker/build-push-action@v4
-        with:
-          push: true
-          # context: .
-          # file: ./strapi/Dockerfile
-          # working-directory: strapi
-          tags: tpeterson66/strapi:${{ github.run_id }}, tpeterson66/strapi:latest
+        run: |
+        docker build \
+          --build-arg NODE_ENV=production \
+          --build-arg STRAPI_URL=https://strapi.devopsfu.io \
+          -t tpeterson66/strapi:${{ github.run_id }} \
+          -t tpeterson66/strapi:latest \
+          -f Dockerfile .
+
