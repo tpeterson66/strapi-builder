@@ -21,7 +21,7 @@ jobs:
 
       - name: Check Directories
         run: |
-          ls -la
+          ls -la strapi
           pwd
 
       - name: Set up QEMU
