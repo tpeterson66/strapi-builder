@@ -38,10 +38,10 @@ jobs:
 
       - name: Build
         run: |
-        docker build \
-          --build-arg NODE_ENV=production \
-          --build-arg STRAPI_URL=https://strapi.devopsfu.io \
-          -t tpeterson66/strapi:${{ github.run_id }} \
-          -t tpeterson66/strapi:latest \
-          -f Dockerfile .
+          docker build \
+            --build-arg NODE_ENV=production \
+            --build-arg STRAPI_URL=https://strapi.devopsfu.io \
+            -t tpeterson66/strapi:${{ github.run_id }} \
+            -t tpeterson66/strapi:latest \
+            -f Dockerfile .
 
