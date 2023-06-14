@@ -41,6 +41,6 @@ jobs:
         uses: docker/build-push-action@v4
         with:
           push: true
-          context: strapi/
-          file: ./Dockerfile
+          context: .
+          file: ./strapi/Dockerfile
           tags: tpeterson66/strapi:${{ github.run_id }}, tpeterson66/strapi:latest
