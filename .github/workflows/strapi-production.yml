@@ -21,13 +21,9 @@ jobs:
 
       - name: Check Directories
         run: |
-          ls -la builder
-          ls -la strapi
-          pwd
-          ls $GITHUB_WORKSPACE
-          ls $GITHUB_WORKSPACE/builder
-          ls $GITHUB_WORKSPACE/strapi
           cp $GITHUB_WORKSPACE/builder/Dockerfile.prod $GITHUB_WORKSPACE/strapi/Dockerfile
+          ls
+          ls -la strapi
           
       - name: Set up QEMU
         uses: docker/setup-qemu-action@v2
@@ -45,6 +41,6 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          # file: Dockerfile.prod
-          working-directory: ${{ github.github_workspace }}/strapi
+          file: Dockerfile
+          working-directory: strapi
           tags: tpeterson66/strapi:${{ github.run_id }}, tpeterson66/strapi:latest
