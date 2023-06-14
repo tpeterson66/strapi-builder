@@ -44,5 +44,5 @@ jobs:
         uses: docker/build-push-action@v3
         with:
           push: true
-          file: builder/Dockerfile.prod
+          file: $GITHUB_WORKSPACE/builder/Dockerfile.prod
           tags: tpeterson66/strapi:${{ github.run_id }}, tpeterson66/strapi:latest
